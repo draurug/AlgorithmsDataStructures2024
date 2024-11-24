@@ -1,18 +1,30 @@
-## Getting Started
+Вимоги до виконання гри Хрестики та Нулики:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Грають Х і О - людина/людина чи людина/комп'ютер
 
-## Folder Structure
+Для гри реалiзовано поле з розмірністю 3*3.
 
-The workspace contains two folders by default, where:
+Після кожного ходу треба перевіряти чи є переможець, після перемоги або нічиєї виводиться результат гри.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Для цієї гри нам потрібні інтерфейси дошки, дисплею, гравця та самої гри.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Інтерфейс дошки:
+Перезапускає пусту дошку після кожної гри
+Напочатку виводить поле заповнене "*" для зручності і в процесі гри помічає ходи гравців Х та О
+Після кожного ходу відображається змінена дошка і перевіряється переможець
+Якщо все поле заповнено,а гравець невизначений, то йде перевірка на нічию
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Інтерфейс дисплею:
+Відображається дошка, показується переможець та нічия.
 
-## Dependency Management
+Інтерфейс гравця:
+Робить хід.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Інтерфейс гри:
+Починається гра.
+Перший гравець обирається рандомним способом, iнтерфейс вiдстежує перехiд гравців.
+
+Iмплементовано : людина/комп'ютер, дошку 3*3, консольний дисплей.
+
+
+\ъ
