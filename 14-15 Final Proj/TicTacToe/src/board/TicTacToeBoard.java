@@ -57,6 +57,7 @@ public class TicTacToeBoard implements Board {
         }
     }
 
+    @Override
     public boolean isCellEmpty(int row, int col) {
         return grid[row][col] == '*';
     }

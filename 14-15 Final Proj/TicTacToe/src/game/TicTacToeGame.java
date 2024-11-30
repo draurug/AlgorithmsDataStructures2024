@@ -1,15 +1,10 @@
 package game;
 
 import board.Board;
-import board.TicTacToeBoard;
-import display.ConsoleDisplay;
 import display.Display;
-import player.ComputerPlayer;
-import player.HumanPlayer;
 import player.Player;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class TicTacToeGame implements Game {
     private Board board;
@@ -18,12 +13,12 @@ public class TicTacToeGame implements Game {
     private Player playerO;
     private Player currentPlayer;
 
-    public TicTacToeGame(Scanner scanner) { // Принимаем Scanner
-        board = new TicTacToeBoard();
-        display = new ConsoleDisplay();
-        playerX = new HumanPlayer('X', scanner); // Передаем Scanner игроку
-        playerO = new ComputerPlayer('O'); // Для компьютера Scanner не нужен
-        setRandomStartingPlayer();
+    public TicTacToeGame(Board board, Display display, Player playerX, Player playerO) {
+        this.board = board;       // Доска передаётся извне
+        this.display = display;   // Отображение передаётся извне
+        this.playerX = playerX;   // Игрок X передаётся извне
+        this.playerO = playerO;   // Игрок O передаётся извне
+        setRandomStartingPlayer(); // Устанавливаем случайного игрока
     }
 
     @Override

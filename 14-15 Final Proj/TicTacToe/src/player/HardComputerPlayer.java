@@ -2,10 +2,10 @@ package player;
 
 import board.Board;
 
-public class ComputerPlayer implements Player {
+public class HardComputerPlayer implements Player {
     private char symbol;
 
-    public ComputerPlayer(char symbol) {
+    public HardComputerPlayer(char symbol) {
         this.symbol = symbol;
     }
 
@@ -16,16 +16,17 @@ public class ComputerPlayer implements Player {
 
     @Override
     public void makeMove(Board board, char symbol) {
+        // Пробуем найти свободную ячейку
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
-                try {
+                if (board.isCellEmpty(row, col)) {
                     board.makeMove(row, col, symbol);
                     System.out.println("Компьютер сделал ход в ячейку: (" + row + ", " + col + ")");
                     return;
-                } catch (IllegalArgumentException ignored) {
-                    // Пробуем следующую ячейку
                 }
             }
         }
+
+        throw new IllegalStateException("Нет доступных ячеек для хода.");
     }
 }

@@ -24,7 +24,7 @@ public class HumanPlayer implements Player {
 
         while (true) {
             try {
-                System.out.println("Введите строку (0-2) и столбец (0-2):");
+                System.out.println("Введите строку (0-2) и столбец (0-2):1 ");
                 row = scanner.nextInt();
                 col = scanner.nextInt();
                 board.makeMove(row, col, symbol);
